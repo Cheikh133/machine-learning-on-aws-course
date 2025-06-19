@@ -4,6 +4,20 @@ This repository contains all practical exercises completed during the [Machine L
 
 ---
 
+## AWS CLI Setup
+
+```bash
+# Install the AWS CLI (Windows)
+winget install --id Amazon.AWSCLI
+
+# Configure your credentials
+aws configure
+```
+
+Provide your AWS Access Key, Secret Access Key, default region (e.g. `us-west-2`), and output format (e.g. `json`).
+
+---
+
 ## Exercise 1: Amazon Rekognition – Image Label Detection
 
 This application analyzes `.jpeg` images (located in `public/photos/`) using Amazon Rekognition and generates a `data.json` file (saved in `build/data.json`) used by a web interface to filter and display labels.
@@ -11,7 +25,7 @@ This application analyzes `.jpeg` images (located in `public/photos/`) using Ama
 ### Technologies
 
 - AWS Rekognition
-- Boto3 (Python SDK)
+- Boto3 (AWS SDK for Python)
 - JSON processing
 - Local HTTP server
 
@@ -45,9 +59,41 @@ The screenshot below shows the application running locally. On the left, images 
 
 ---
 
+## Exercise 2: Amazon Textract – Document Text Extraction
+
+This application extracts structured text from handwritten forms using Amazon Textract and custom queries.
+
+### Technologies
+
+- AWS Textract
+- Boto3 (Python SDK)
+- Query-based document parsing
+- CSV output
+
+### How It Works
+
+1. The script `main.py` scans all `.jpg` files in `raw_images/`.
+2. It sends each image to Textract with two queries: `"What is the response id"` and `"What are the notes?"`.
+3. The answers are extracted from `response["Blocks"]` and saved as rows.
+4. The result is displayed in standard CSV format.
+
+### Run Locally
+
+```bash
+# Execute the script
+python main.py
+```
+
+### Preview
+
+The screenshot below shows the terminal output, including extracted `ResponseId` and `Notes` fields from each handwritten review.
+
+![Amazon Textract Output](./assets/2.png)
+
+---
+
 ## Upcoming Exercises
 
-- Exercise 2: Amazon Textract – Document Text Extraction  
 - Exercise 3: Amazon Transcribe & Translate – Audio Processing  
 
 (To be updated upon completion)
@@ -58,4 +104,4 @@ The screenshot below shows the application running locally. On the left, images 
 
 - Python 3.x  
 - AWS CLI configured (`aws configure`)  
-
+- AWS account
