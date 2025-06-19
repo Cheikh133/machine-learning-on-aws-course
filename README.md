@@ -41,7 +41,7 @@ Then open `http://localhost:8080` in your browser.
 
 The screenshot below shows the application running locally. On the left, images from `public/photos/` are displayed. When hovering over an image, the detected labels (returned by Amazon Rekognition) appear on the right panel.
 
-![Amazon Rekognition Web App](./assets/exercise1_screenshot.png)
+![Amazon Rekognition Web App](./assets/1.png)
 
 ---
 
