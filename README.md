@@ -92,9 +92,43 @@ The screenshot below shows the terminal output, including extracted `ResponseId`
 
 ---
 
+## Exercise 3: Amazon Comprehend – Sentiment Analysis
+
+This application uses Amazon Comprehend to analyze the sentiment of each review in the `movies.csv` file generated in Exercise 2.
+
+### Technologies
+
+- AWS Comprehend
+- Boto3 (AWS SDK for Python)
+- Sentiment detection
+- CSV parsing
+
+### How It Works
+
+1. The script `main.py` reads the `movies.csv` file.
+2. It extracts the `Notes` column (the movie reviews).
+3. It sends the list of reviews to `batch_detect_sentiment` from Amazon Comprehend.
+4. The API returns a sentiment (e.g., POSITIVE, NEGATIVE) for each review.
+5. The sentiment is displayed next to its corresponding review in the terminal.
+
+### Run Locally
+
+```bash
+# Execute the script
+python main.py
+```
+
+### Preview
+
+The screenshot below shows the terminal output with sentiment detected for each review.
+
+![Amazon Comprehend Output](./assets/3.png)
+
+---
+
 ## Upcoming Exercises
 
-- Exercise 3: Amazon Transcribe & Translate – Audio Processing  
+- Exercise 4: Amazon Transcribe & Translate – Audio Processing  
 
 (To be updated upon completion)
 
