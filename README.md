@@ -202,7 +202,7 @@ Once the bot is built and deployed:
 
 The screenshot below shows a successful interaction with the bot, where Lex collects the `Date` and `StoreLocation` slots and triggers the Lambda function, which returns the correct store opening hour.
 
-<img src="./assets/5.png" alt="Amazon Lex Chatbot Interaction" width="500" height="300"/>
+<img src="./assets/5.png" alt="Amazon Lex Chatbot Interaction" width="300" height="500"/>
 
 ---
 
